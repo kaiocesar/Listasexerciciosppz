@@ -19,7 +19,11 @@ qtd_anos_fumados=int(raw_input("Qual a quantidade de anos que você já fumou ? 
 
 vida_por_dia=qtd_cigarros_dia*600
 vida_por_ano=qtd_anos_fumados*365
-resto=vida_por_ano*vida_por_dia
+resto=round((vida_por_ano*vida_por_dia)/86400)
+# 1 dia igual 86400
+# resto/86400
+# round()
+
 
 #tempo_perdido=datetime.fromtimestamp(resto)
 #datetime.fromtimestamp(mktime(resto))
