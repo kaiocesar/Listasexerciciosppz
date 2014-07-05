@@ -9,7 +9,8 @@
     3- Sobe o dump mysql.sql
 """
 import MySQLdb
-from datetime import date
+import time
+
 
 connect = MySQLdb.connect(host='127.0.0.1',user='root', passwd='', db='blog')
 
@@ -28,5 +29,8 @@ for post in cur.fetchall():
             print '\n\r'
 
 # INSERT
-query = 'INSERT INTO posts (title, body, created_at, status) VALUES ("PROXIMO TITULO POST","CORPO DO POST BLABABLA",""'
-cur.execute
+dataUx = time.localtime()
+datahoje ='%s-%02d-%02d 00:00:00' % (dataUx.tm_year, dataUx.tm_mon, dataUx.tm_mday)
+print datahoje
+#query = 'INSERT INTO posts (title, body, created_at, status) VALUES ("PROXIMO TITULO POST","CORPO DO POST BLABABLA",""'
+#cur.execute
