@@ -44,4 +44,32 @@ else:
     print 'Erro ao adicionar os dados.'
 
 connect.commit()
+
+
+
+# UPDATE
+query = "UPDATE posts SET title = '%s' where id = %d " % ('Titulo alterado do blog',1)
+up_ok = cur.execute(query)
+
+if (up_ok==1):
+    print 'Linha atualizada com sucesso.'
+else:
+    print 'Falha na atualização'
+
+connect.commit()
+
+
+# DELETE
+query = "DELETE FROM posts where id = %d " % (12)
+del_ok = cur.execute(query)
+
+if (del_ok==1):
+    print 'Linha deletada com sucesso.'
+else:
+    print 'Falha na deleção'
+
+connect.commit()
+
+
+# Por fim fechamos a conexão
 connect.close()
