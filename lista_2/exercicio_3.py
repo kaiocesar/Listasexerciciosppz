@@ -12,7 +12,6 @@
     variáveis com o conteúdo ZERO.
 """
 
-
 kg_peixe = int(raw_input('Digita a quantidade em kg de peixes ? '))
 multa = 0;
 excesso = 0
