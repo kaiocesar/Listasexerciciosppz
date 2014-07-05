@@ -1,7 +1,5 @@
-Lista exercícios do curso Python para Zumbis
-==================
-
-Lista de Exercícios do curso Python para Zumbis.
+Lista 1 de Exercícios do curso Python para Zumbis.
+==============================================
 
 1. Faça um programa que peça dois números inteiros e imprima a soma desses dois números
 
