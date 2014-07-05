@@ -7,7 +7,11 @@
         sudo yum -y install MySQL-python.x86_64
     2- declara o modulo "MySQLdb"
     3- Sobe o dump mysql.sql
+
+    Para mais informações consulte a documentação do MySQLdb
+    http://mysql-python.sourceforge.net/MySQLdb.html
 """
+
 import MySQLdb
 import time
 
@@ -31,6 +35,13 @@ for post in cur.fetchall():
 # INSERT
 dataUx = time.localtime()
 datahoje ='%s-%02d-%02d 00:00:00' % (dataUx.tm_year, dataUx.tm_mon, dataUx.tm_mday)
-print datahoje
-#query = 'INSERT INTO posts (title, body, created_at, status) VALUES ("PROXIMO TITULO POST","CORPO DO POST BLABABLA",""'
-#cur.execute
+
+query = "INSERT INTO posts (id,title, body, created_at, status) VALUES (null,'alor on danse teste PROXIMO TITULO POST','CORPO DO POST BLABABLA','%s','1'); " % (datahoje)
+
+if (cur.execute(query)==1):
+    print 'Dados inseridos com sucesso.\n\rLast id: %s' % (connect.insert_id())
+else:
+    print 'Erro ao adicionar os dados.'
+
+connect.commit()
+connect.close()
